@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+//The clearfix allows a container to wrap its floated children.
+Without a clearfix or equivalent styling, a container does not wrap around its floated children 
+and collapses, 
+just as if its floated children were positioned absolutely.
+
+
+<div id="logo-nav-div">
+       
+       <div id="logo-div">
+       Logo
+       </div>
+       <div id="nav-div">
+       Navigation
+       </div>
+   </div>
+
+*{
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   box-sizing: border-box;
+}
+
+-------------------------------------------------------------------------
+
+#logo-nav-div
+{
+   width: 100%;
+   min-height: 50px;
+   background-color: lightgray;
+}
+---------------------------------------------------------------------------
+#logo-div{
+   width: 50%;
+   min-height: 50px;
+   background-color: gray;
+}
+-------------------------------------------------------------------------
+#nav-div{
+   width: 50%;
+   min-height: 50px;
+   background-color: gray;
+}
+---------------------------------------------------------------------------
+Add float:left in logo-div
+Add float:ritht in nav-div
+Add class="clearfix" in Parent div
+
+.clearfix::after
+{
+content: "";
+display: block;
+clear:both;
+}
+--------------------------------------------------------------
+Add  line-height: 50px; in logo-div and nav-div
+------------------------------------------------------
+Add padding-left:2%;  in logo-div
+------------------------------------------------
+Now remove background-color from logo-div and nav-div
+---------------------------------------------------
+Thus we have create first div as requirement, Now we will create second div which is header
+--------------------------------------------------
+Add div in html file
+<div id="header-banner-div">
+       Header/banner
+</div>
+......................................
+Now add css for this
+
+#header-banner-div{
+   width: 100%;
+   min-height: 100px;
+   background-color: lightgray;
+}
+------------------------------------------
+But there is no space between two div so add below line in logo-nav-div
+margin-bottom:10px;     
+----------------------------------------------
+Add below text in header-banner-div
+text-align: center;
+line-height: 100px;
+------------------------------------------------
+Add in html file
+<div id="intro-div">
+       Intro text area
+</div>
+---------------------------------------------------
+Add Css
+#intro-div
+{
+   width: 100%;
+   min-height: 80px;
+   background-color: lightgray;
+}
+--------------------------------------------
+But there is no space between two div so add below line in #header-banner-div
+margin-bottom:10px; 
+-----------------------------------------------------------------
+Add below text in intro div
+text-align: center;
+line-height: 80px;
+----------------------------------------------------
+Add in html file
+<div id="main-div">
+       <div class="box">Box-1</div>
+       <div class="box">Box-2</div>
+       <div class="box">Box-3</div>
+   </div>
+
+--------------------------------------------------
+Add in Css file
+#main-div
+{
+   width:100%;
+   min-height: 400px;
+   background-color: gray;
+}
+------------------------------------------------------
+But there is no space between two div so add below line in #intro-div
+margin-bottom:10px; 
+--------------------------------------------------------
+#main-div .box{
+   width: 30%;
+   min-height: 400px;
+   background-color: lightgray;
+}
+
+See Box-1 2 and 3 by scrolling running page
+------------------------------------------------------------
+Now add float:left property in  #main-div .box
+---------------------------------------------------------
+class="clearfix"   add this css in <div id="main-div"....
+------------------------------------------------------------
+Now put Gap between box 1,2,3. As we add 30+30+30=90 and 10 left. so put 5 left of box-2 and 5 in right
+
+#main-div .box:nth-child(2)
+{
+   margin-left: 5%;
+   margin-right: 5%;
+}
+---------------------------------------------------------------------
+Now remove color from both side of Box-2
+Remove background-color from #main-div
+-------------------------------------------------------
+Add below text in #main-div .box
+text-align: center;
+line-height: 400px;
+----------------------------------------------------------
+<div id="footer-div">
+       Footer
+   </div>
+
+----------------------------------------------------
+#footer-div{
+   width: 100;
+   min-height: 50px;
+   background-color: lightgray;
+}
+------------------------------------------------------
+But there is no space between two div so add below line in #main-div
+margin-bottom:10px;
+------------------------------------------------------------------
+Add below text in #footer-div
+text-align: center;
+line-height: 50px;
+====================================================================================
+Now put all div into wrapper div for fully stretched or centre align
+<div id="wrapper-div">
+---
+---
+---
+--
+<div>
+
+Then Write the css for wrapper div
+
+#wrapper-div
+{
+   width: 80%;
+   margin: auto;
+}
+
+
+
+
+
+
+
+    
+</body>
+</html>
